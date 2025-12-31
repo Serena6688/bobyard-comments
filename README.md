@@ -3,6 +3,7 @@
 A simple full-stack comments application (similar to YouTube / Reddit comments) built as part of the Bobyard take-home challenge.
 
 The app supports listing, adding, editing, and deleting comments, with data persisted in a database and rendered via a React frontend.
+<img width="936" height="1594" alt="670d518a-99e4-4d1d-9a61-4d1cfd7b80c5" src="https://github.com/user-attachments/assets/ccf4e2cc-833a-4810-b141-6c83a1ef033c" />
 
 ---
 
