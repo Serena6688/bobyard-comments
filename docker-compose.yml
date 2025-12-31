@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: bobyard
+      POSTGRES_USER: bobyard
+      POSTGRES_PASSWORD: bobyard
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend:/app
+      - ./sample_comments.json:/sample_comments.json
+
+  frontend:
+    image: node:20
+    working_dir: /app
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    command: bash -lc "npm install && npm run dev"
+
+volumes:
+  pgdata:
