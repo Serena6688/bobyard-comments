@@ -3,11 +3,18 @@
 A simple full-stack comments application (similar to YouTube / Reddit comments) built as part of the Bobyard take-home challenge.
 
 The app supports listing, adding, editing, and deleting comments, with data persisted in a database and rendered via a React frontend.
-<img width="936" height="1594" alt="670d518a-99e4-4d1d-9a61-4d1cfd7b80c5" src="https://github.com/user-attachments/assets/ccf4e2cc-833a-4810-b141-6c83a1ef033c" />
-<img width="928" height="1682" alt="489b9e3c-3016-4068-b18f-3b637d946c82" src="https://github.com/user-attachments/assets/d8851f2d-781d-4adc-b21d-9f1f689148be" />
-<img width="932" height="1708" alt="885d0343-c3f8-43a1-ab15-3cf82410dca2" src="https://github.com/user-attachments/assets/edaa62a3-7746-4dc6-9489-c2ad5536369d" />
-<img width="926" height="378" alt="907957b5-09a8-44c5-b2f0-3a907aad923c" src="https://github.com/user-attachments/assets/4bb6f8f6-03d2-40d7-8e26-22bda7753480" />
 
+---
+
+## Demo / Screenshots
+
+<img width="936" height="1594" alt="Comments list" src="https://github.com/user-attachments/assets/ccf4e2cc-833a-4810-b141-6c83a1ef033c" />
+
+<img width="928" height="1682" alt="Add comment" src="https://github.com/user-attachments/assets/d8851f2d-781d-4adc-b21d-9f1f689148be" />
+
+<img width="932" height="1708" alt="Edit comment" src="https://github.com/user-attachments/assets/edaa62a3-7746-4dc6-9489-c2ad5536369d" />
+
+<img width="926" height="378" alt="Delete comment" src="https://github.com/user-attachments/assets/4bb6f8f6-03d2-40d7-8e26-22bda7753480" />
 
 ---
 
@@ -22,7 +29,7 @@ The app supports listing, adding, editing, and deleting comments, with data pers
 - React
 - Vite
 
-### Infra
+### Infrastructure
 - Docker & Docker Compose
 
 ---
@@ -32,8 +39,25 @@ The app supports listing, adding, editing, and deleting comments, with data pers
 - Add a new comment (as Admin)
 - Edit existing comments
 - Delete comments
-- Displays author, date, likes, and optional image
+- Display author, date, likes, and optional image
 - Backend seeded from a provided JSON file
+
+---
+
+## Project Structure
+
+bobyard-comments/
+├── docker-compose.yml
+├── sample_comments.json
+├── backend/
+│   ├── Dockerfile
+│   ├── manage.py
+│   ├── config/
+│   └── comments/
+└── frontend/
+├── index.html
+├── package.json
+└── src/
 
 ---
 
@@ -48,3 +72,34 @@ From the project root:
 
 ```bash
 docker compose up --build
+
+This will:
+	•	Start PostgreSQL
+	•	Run Django migrations
+	•	Seed comments from sample_comments.json
+	•	Start the Django API server
+	•	Start the React frontend
+
+⸻
+
+Access the App
+	•	Frontend: http://localhost:5173
+	•	Backend API: http://localhost:8000/api/comments/
+
+⸻
+
+Notes
+	•	The backend automatically seeds the database on startup using sample_comments.json
+	•	The frontend communicates with the backend via REST APIs
+	•	Docker is used to simplify setup and ensure a consistent environment
+
+⸻
+
+Stopping the App
+
+docker compose down
+
+
+- 或 `## Design Decisions`
+
+这在 follow-up interview 时非常好用。
