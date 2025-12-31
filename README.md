@@ -32,4 +32,14 @@ The app supports listing, adding, editing, and deleting comments, with data pers
 
 ---
 
-## Project Structure
+## How to Run (Recommended)
+
+### Prerequisites
+- Docker Desktop installed and running
+
+### Start the app
+
+From the project root:
+
+```bash
+docker compose up --build
