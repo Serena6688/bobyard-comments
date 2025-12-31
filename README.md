@@ -17,7 +17,7 @@ The app supports listing, adding, editing, and deleting comments, with data pers
 - React
 - Vite
 
-### Infrastructure
+### Infra
 - Docker & Docker Compose
 
 ---
