@@ -84,7 +84,7 @@ This will:
 
 Access the App
 	•	Frontend: http://localhost:5173
-	•	Backend API: http://localhost:8000/api/comments/
+	•	Backend API: http://localhost:8001/api/comments/
 
 ⸻
 
